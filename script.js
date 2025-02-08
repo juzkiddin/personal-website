@@ -30,8 +30,4 @@ document.addEventListener("DOMContentLoaded", function() {
     darkModeToggle.addEventListener("click", () => {
         document.body.classList.toggle("dark-mode");
     });
-    // Set current year dynamically
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("year").textContent = new Date().getFullYear();
-});
 });
