@@ -100,3 +100,14 @@ html {
     background-color: #222;
     color: #fff;
 }
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #222;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    font-family: 'Arial', sans-serif; /* Use Arial for a classic look */
+}
