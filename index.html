@@ -3,30 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abhijith V - Personal Website</title>
+    <title>Abhijith V - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <header>
         <h1>Abhijith V</h1>
-        <p>IT Professional | QlikSense Administrator | Cloud Enthusiast</p>
-        <nav>
-            <ul>
-                <li><a href="#about" data-section="about">About</a></li>
-                <li><a href="#experience" data-section="experience">Experience</a></li>
-                <li><a href="#projects" data-section="projects">Projects</a></li>
-                <li><a href="#skills" data-section="skills">Skills</a></li>
-                <li><a href="#education" data-section="education">Education</a></li>
-                <li><a href="#contact" data-section="contact">Contact</a></li>
-            </ul>
-        </nav>
+        <p>IT Professional | Cloud & QlikSense Expert | Problem Solver</p>
+        <button id="dark-mode-toggle">🌙 Dark Mode</button>
     </header>
-    <main id="content">
+
+    <nav>
+        <button class="tab-button active" data-tab="about">About</button>
+        <button class="tab-button" data-tab="experience">Experience</button>
+        <button class="tab-button" data-tab="skills">Skills</button>
+        <button class="tab-button" data-tab="projects">Projects</button>
+        <button class="tab-button" data-tab="education">Education</button>
+        <button class="tab-button" data-tab="contact">Contact</button>
+    </nav>
+
+    <main id="content">  
         <!-- Sections will be loaded here dynamically -->
     </main>
+
     <footer>
-        <p>&copy; 2023 Abhijith V. All rights reserved.</p>
+        <p>&copy; 2024 Abhijith V. All rights reserved.</p>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

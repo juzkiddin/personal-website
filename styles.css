@@ -1,67 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
+    font-family: 'Poppins', sans-serif;
     background-color: #f4f4f4;
     color: #333;
+    margin: 0;
+    padding: 0;
 }
 
 header {
-    background: #333;
+    background: #222;
     color: #fff;
-    padding: 20px 0;
     text-align: center;
+    padding: 20px;
 }
 
-header h1 {
-    margin: 0;
+button {
+    cursor: pointer;
 }
 
-header p {
-    margin: 5px 0 0;
+nav {
+    text-align: center;
+    margin-top: 10px;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0 0;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+.tab-button {
+    background: #555;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
+.tab-button.active {
+    background: #007bff;
 }
 
 main {
     padding: 20px;
     max-width: 800px;
-    margin: 0 auto;
+    margin: auto;
 }
 
-section {
-    margin-bottom: 40px;
-}
-
-h2 {
-    border-bottom: 2px solid #333;
-    padding-bottom: 10px;
+.tab-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 footer {
-    background: #333;
-    color: #fff;
     text-align: center;
-    padding: 10px 0;
+    padding: 10px;
+    background: #222;
+    color: white;
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #222;
+    color: #fff;
+}
+
+.dark-mode .tab-content {
+    background: #333;
+    color: #fff;
+}
+
+.dark-mode .tab-button.active {
+    background: #00bfff;
 }

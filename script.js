@@ -1,30 +1,33 @@
-// Function to load a section dynamically
-function loadSection(section) {
-    fetch(`sections/${section}.html`)
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('content').innerHTML = data;
-        })
-        .catch(error => console.error('Error loading section:', error));
-}
+document.addEventListener("DOMContentLoaded", function() {
+    const tabButtons = document.querySelectorAll(".tab-button");
+    const contentArea = document.getElementById("content");
 
-// Load the default section (About) on page load
-window.onload = () => {
-    loadSection('about');
-};
+    function loadSection(section) {
+        fetch(`sections/${section}.html`)
+            .then(response => response.text())
+            .then(data => {
+                contentArea.innerHTML = data;
+            })
+            .catch(error => {
+                contentArea.innerHTML = "<p>Failed to load content.</p>";
+                console.error("Error loading section:", error);
+            });
+    }
 
-// Add event listeners to navigation links
-document.querySelectorAll('nav ul li a').forEach(link => {
-    link.addEventListener('click', function (e) {
-        e.preventDefault();
-        const section = this.getAttribute('data-section');
-        loadSection(section);
-        history.pushState(null, '', `#${section}`);
+    // Initial load
+    loadSection("about");
+
+    tabButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            tabButtons.forEach(btn => btn.classList.remove("active"));
+            button.classList.add("active");
+            loadSection(button.getAttribute("data-tab"));
+        });
+    });
+
+    // Dark Mode Toggle
+    const darkModeToggle = document.getElementById("dark-mode-toggle");
+    darkModeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
     });
 });
-
-// Handle back/forward navigation
-window.onpopstate = () => {
-    const section = window.location.hash.substring(1) || 'about';
-    loadSection(section);
-};
