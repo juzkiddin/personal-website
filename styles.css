@@ -102,6 +102,7 @@ html {
 }
 
 footer {
+    align-self: center;
     text-align: center;
     padding: 10px;
     background: #222;
